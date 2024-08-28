@@ -34,11 +34,13 @@ function findEvenIndex(arr) {
 
     for (let i = 0; i < arr.length; i++) {
         sum += arr[i];
+        console.log(sum)
     }
 
 
     for (let i = 0; i < arr.length; i++) {
         sum -= arr[i];
+        console.log(sum)
 
         if (leftSum === sum) {
             return i;
@@ -49,6 +51,7 @@ function findEvenIndex(arr) {
 
 }
 
+console.log(findEvenIndex([1, 2, 3, 4, 3, 2, 1]))
 // second solution
 function findEvenIndex(arr) {
     var left = 0, right = arr.reduce(function (pv, cv) {

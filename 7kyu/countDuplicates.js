@@ -29,7 +29,7 @@ function duplicateCount(text) {
     }
     return count;
 }
-
+console.log(duplicateCount("aabbcde"))
 // Approach second
 
 // function duplicateCount(text){

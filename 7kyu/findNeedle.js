@@ -6,4 +6,4 @@
 
 // "found the needle at position " plus the index it found the needle, so:
 
-const findNeedle = (haystack) => "found the needle at position " + haystack.indexOf("needle")
+const findNeedle = (haystack) => "found the needle at position " + haystack.indexOf("needle");

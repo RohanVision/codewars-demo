@@ -1,6 +1,3 @@
-
-
-
 // Our football team has finished the championship.
 
 // Our team's match results are recorded in a collection of strings. Each match is represented by a string in the format "x:y", where x is our team's score and y is our opponents score.
@@ -21,29 +18,41 @@
 // 0 <= y <= 4
 
 // my approach
-function points(games) {
-    let result = 0;
-    for (let i = 0; i < games.length; i++) {
-        const x = parseInt(games[i][0])
-        const y = parseInt(games[i][2])
-        if (x > y) {
-            result += 3;
-        } else if (x < y) {
-            result += 0;
-        } else {
-            result += 1;
-        }
-    }
-    return result
-}
+// function points(games) {
+//     let result = 0;
+//     for (let i = 0; i < games.length; i++) {
+//         const x = parseInt(games[i][0])
+//         const y = parseInt(games[i][2])
+//         if (x > y) {
+//             result += 3;
+//         } else if (x < y) {
+//             result += 0;
+//         } else {
+//             result += 1;
+//         }
+//     }
+//     return result
+// }
 
 
 // Cleaver Approach
 
+// const points = (games) => {
+//     return (
+//         games.reduce((acc, curr) =>
+//             acc += curr[0] > curr[2] ? 3 :
+//                 curr[0] < curr[2] ? 0 : 1, 0)
+//     )
+// }
+
+
 const points = (games) => {
     return (
-        games.reduce((acc, curr) =>
-            acc += curr[0] > curr[2] ? 3 :
-                curr[0] < curr[2] ? 0 : 1, 0)
+        games.reduce((pre, cur) => {
+            return pre += cur[0] > cur[2] ? 3 :
+                cur[0] < cur[2] ? 0 : 1
+        }, 0)
     )
 }
+
+console.log(points(["3:1", "2:2", "0:1"]))

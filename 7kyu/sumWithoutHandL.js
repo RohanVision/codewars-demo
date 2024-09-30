@@ -12,14 +12,24 @@
 // If an empty value ( null, None, Nothing etc. ) is given instead of an array, or the given array is an empty list or a list with only 1 element, return 0.
 
 
-function sumArray(array) {
-    if (!array) return 0;
-    if (array.length < 3) return 0
-    // sort array 
-    const sorted = array.sort((a, b) => a - b)
-    // slice out from second position
-    return sorted.slice(1, -1).reduce((total, current) => total + current)
+// function sumArray(array) {
+//     if (!array) return 0;
+//     if (array.length < 3) return 0
+//     // sort array 
+//     const sorted = array.sort((a, b) => a - b);
+//     console.log(sorted)
+//     // slice out from second position
+//     return sorted.slice(1, -1).reduce((total, current) => total + current)
 
+// }
+
+
+function sumArr(arr) {
+    if (!arr) return 0;
+    if (arr.length < 3) return 0;
+    const sortArr = arr.sort((a, b) => a - b);
+    const resultArr = sortArr.slice(1, -1).reduce((prev, curr) => prev + curr);
+    return resultArr
 }
-
-console.log(sumArray([6, 2, 1, 8, 10]))
+// console.log(sumArray([6, 2, 1, 8, 10]))
+console.log(sumArr([6, 2, 1, 8, 10]));

@@ -14,5 +14,22 @@
 
 
 function openOrSenior(data) {
+    let result = [];
+
+    for (let i = 0; i < data.length; i++) {
+        age = data[i][0];
+        handicap = data[i][1]
+
+        if (age >= 55 && handicap > 7) {
+            result.push('Senior')
+        } else {
+            result.push("Open")
+        }
+    }
+    return result
+}
+
+
+function openOrSenior(data) {
     return data.map(([age, handicap]) => (age > 54 && handicap > 7) ? 'Senior' : 'Open');
 }

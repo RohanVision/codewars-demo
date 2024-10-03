@@ -12,6 +12,32 @@
 // Some: The some method checks if at least one character in the string matches the condition.
 
 
+
+/* Time complexity O(n * m) => the outer loop run N number of times and inner loop run on each SubArray M times
+    n * m = 
+    n = inner loop iterate 3 times
+    m = outer loop iterate 3 + 3 + 4 = 10
+ */
+
+function bingo(ticket, win) {
+    let mini_value = 0;
+
+    for (let i = 0; i < ticket.length; i++) {
+        let [str, num] = ticket[i];
+
+        for (let k = 0; k < str.length; k++) {
+            if (str.charCodeAt(k) === num) {
+                mini_value++;
+                break;
+            }
+        }
+    }
+    return mini_value >= win ? "Winner!" : "Loser!"
+}
+
+
+
+
 function bingo(ticket, win) {
     const wins = ticket.filter(([string, number]) =>
         string.split('').some(char => char.charCodeAt(0) === number)

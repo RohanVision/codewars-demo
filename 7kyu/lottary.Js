@@ -19,23 +19,22 @@
     m = outer loop iterate 3 + 3 + 4 = 10
  */
 
+// Practice
 function bingo(ticket, win) {
-    let mini_value = 0;
+    let min_win = 0;
 
     for (let i = 0; i < ticket.length; i++) {
         let [str, num] = ticket[i];
 
         for (let k = 0; k < str.length; k++) {
-            if (str.charCodeAt(k) === num) {
-                mini_value++;
+            if (str.charCodeAt() == num) {
+                min_win++;
                 break;
             }
         }
     }
-    return mini_value >= win ? "Winner!" : "Loser!"
+    return min_win >= win ? "Winner!" : "Loser!"
 }
-
-
 
 
 function bingo(ticket, win) {

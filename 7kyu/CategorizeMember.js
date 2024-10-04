@@ -12,21 +12,21 @@
 // input =  [[18, 20], [45, 2], [61, 12], [37, 6], [21, 21], [78, 9]]
 // output = ["Open", "Open", "Senior", "Open", "Open", "Senior"]
 
-
+// Practice
 function openOrSenior(data) {
     let result = [];
 
     for (let i = 0; i < data.length; i++) {
         age = data[i][0];
-        handicap = data[i][1]
+        handicap = data[i][1];
 
         if (age >= 55 && handicap > 7) {
             result.push('Senior')
         } else {
-            result.push("Open")
+            result.push("Open");
         }
     }
-    return result
+    return result;
 }
 
 

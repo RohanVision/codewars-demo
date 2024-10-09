@@ -43,3 +43,13 @@
 const isPowerOfThree = function (n) {
     return n > 0 && 1162261467 % n === 0;
 };
+
+// Step 1: Rephrase the question and explain what you understood
+// Step 2: Ask for edge cases by changing the given example or making your own
+// Step 3: Ask for types of inputs
+// Step 4: Explain first approach of the solution that comes to your mind in a high level
+// Step 5: Do pseudocode while explaining or write the code
+// Step 6: Ask the interviewer if the solution is okay
+// Step 7: if he says it is good, then code it up
+// Step 8: DRY RUN the CODE
+// Step 9 : Optimise further if possible

@@ -7,7 +7,7 @@ function countUniqueValues(arr) {
     for (let key of arr) {
         hashObj[key] = (hashObj[key] || 0) + 1;
     }
-    return Object.keys[key].length;
+    return Object.keys[hashObj].length;
 }
 
 function countUniqueValues(arr) {

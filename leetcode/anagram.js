@@ -27,8 +27,6 @@
 // Follow up: What if the inputs contain Unicode characters? How would you adapt your solution to such a case?
 
 
-
-
 var isAnagram = function (s, t) {
     if (s.length !== t.length) return false;
     let countObj = {}
@@ -36,6 +34,7 @@ var isAnagram = function (s, t) {
     for (let letter of s) {
         countObj[letter] = (countObj[letter] || 0) + 1;
     }
+    console.log(countObj)
 
     for (let letter of t) {
         if (countObj[letter] === undefined || countObj[letter] === 0) {

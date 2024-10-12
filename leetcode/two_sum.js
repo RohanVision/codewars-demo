@@ -34,16 +34,17 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 
 */
 
+
 // practice 1
-function twoSum(num, target) {
+function twoSums(num, target) {
     let hashObj = {};
 
     for (let i = 0; i < num.length; i++) {
         diff = target - num[i];
         if (hashObj.hasOwnProperty(diff)) {
-            return [hashObj[diff], i]
+            return [hashObj[diff], i];
         }
-        hashObj[num[i]] = i;
+        hashObj[diff] = i;
     }
     return null;
 }

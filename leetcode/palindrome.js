@@ -27,32 +27,32 @@
 // 1 <= s.length <= 2 * 105
 // s consists only of printable ASCII characters.
 
-
-const check = (s) => {
-    let l = 0;
-    let r = s.length - 1;
-    while (l <= r) {
-        if (s[l] === s[r]) {
-            l++;
-            r--
+// Practice weekend
+function checkPal(s) {
+    i = 0;
+    j = s.length - 1;
+    while (i <= j) {
+        if (s[i] === s[j]) {
+            i++;
+            j--
         } else {
             return false;
         }
+        return true;
     }
-    return true;
 }
 
+
 var isPalindrome = function (s) {
-    const regx = /[^a-zA-Z0-9]/g;
+    const regx = /[^a-zA-Z]/g;
     const clean = s.replace(regx, "").toLowerCase();
-    return check(clean)
+    return checkPal(clean)
 };
 
 // second Approach
 
 // var isPalindrome = function(s) {
 //     const result = s.replace(/[\W_]/g, "").toLowerCase();
-//     console.log(result)
 //     let l = 0;
 //     let r = result.length - 1;
 //     while(l < r){

@@ -5,8 +5,6 @@
 
 // You must do this by modifying the input array in-place with O(1) extra memory.
 
-
-
 // Example 1:
 
 // Input: s = ["h","e","l","l","o"]
@@ -24,6 +22,16 @@
 
 
 // Two Pointers Approach
+
+function reverse(s) {
+    i = 0;
+    j = s.length - 1;
+    while (i <= j) {
+        [s[i], s[j]] = [s[j], s[i]];
+        i++;
+        j--;
+    }
+}
 
 var reverseString = function (s) {
     let i = 0;

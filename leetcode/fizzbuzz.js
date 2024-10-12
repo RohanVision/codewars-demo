@@ -26,6 +26,7 @@
 
 
 
+
 const fizzBuzz = function (n) {
     let result = [];
 
@@ -46,19 +47,18 @@ const fizzBuzz = function (n) {
 
 // Practice time 1
 
-// function fizzBuzz (n) {
-//     let answer = [];
-
-//     for(let i = 1; i <= n; i++){
-//         if(i % 3 === 0 && i % 5 === 0){
-//             answer.push("FizzBuzz");
-//         } else if (i % 3 === 0){
-//             answer.push("Fizz");
+// function fizzBuzz(n) {
+//     let output = [];
+//     for (let i = 1; i <= n; i++) {
+//         if (i % 3 === 0 && i % 5 === 0) {
+//             output.push("FizzBuzz")
+//         } else if (i % 3 === 0) {
+//             output.push("Fizz");
 //         } else if (i % 5 === 0) {
-//             answer.push("Buzz");
+//             output.push("Buzz");
 //         } else {
-//             answer.push(i.toString())
+//             output.push(i.toString())
 //         }
 //     }
-//     return answer;
+//     return output
 // }

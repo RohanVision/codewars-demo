@@ -38,3 +38,19 @@ var longestCommonPrefix = function (strs) {
     }
     return result;
 };
+
+
+
+// Practice weeken - also can do with binary search and divide and conquare
+
+function longestPrefix(str) {
+    let result = ""
+    for (let i = 0; i < str[0].length; i++) {
+        letter = str[0][i];
+        for (let j = 1; j < str.length; j++) {
+            if (str[j][i] !== letter) return result;
+        }
+        result += letter;
+    }
+    return result;
+}

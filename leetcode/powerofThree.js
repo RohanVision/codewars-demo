@@ -32,13 +32,14 @@
 
 // Follow up: Could you solve it without loops/recursion?
 
+// Practice Weekend
+function powerThree(n) {
+    while (n > 1) {
+        n = n / 3
+    }
+    return n === 1
+}
 
-// var isPowerOfThree = function(n) {
-//     while (n > 1) {
-//        n = n / 3
-//     }
-//     return n === 1
-// };
 
 const isPowerOfThree = function (n) {
     return n > 0 && 1162261467 % n === 0;

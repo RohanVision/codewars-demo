@@ -50,7 +50,7 @@ function twoSums(num, target) {
 }
 
 
-// Optimal Solution
+// Optimal Solutions
 
 // function twoSum(numbers, target) {
 //     let result = {}

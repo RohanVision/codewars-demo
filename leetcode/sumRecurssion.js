@@ -14,3 +14,16 @@ function sumRecursive(arr, cb) {
         return sumRecursive(arr, cb)
     }
 }
+
+
+function sumrecursive(arr, cb) {
+    if (arr.length === 0) {
+        return false;
+    } else {
+        let res = arr.pop();
+        if (cb(res) === true) {
+            return true;
+        }
+        return sumrecursive(arr, cb)
+    }
+}

@@ -27,30 +27,32 @@
 
 // here is my solution
 
-var longestCommonPrefix = function (strs) {
-    let result = "";
-    for (let i = 0; i < strs[0].length; i++) {
-        letter = strs[0][i];
-        for (let j = 1; j < strs.length; j++) {
-            if (strs[j][i] !== letter) return result;
-        }
-        result += letter;
-    }
-    return result;
-};
+// var longestCommonPrefix = function (strs) {
+//     let result = "";
+//     for (let i = 0; i < strs[0].length; i++) {
+//         letter = strs[0][i];
+//         for (let j = 1; j < strs.length; j++) {
+//             if (strs[j][i] !== letter) return result;
+//         }
+//         result += letter;
+//     }
+//     return result;
+// };
 
 
 
-// Practice weeken - also can do with binary search and divide and conquare
+// Practice weekend - also can do with binary search and divide and conquare
 
-function longestPrefix(str) {
-    let result = ""
+
+function longestCommonPrefix(str) {
+    let res = "";
     for (let i = 0; i < str[0].length; i++) {
         letter = str[0][i];
         for (let j = 1; j < str.length; j++) {
-            if (str[j][i] !== letter) return result;
+            if (str[j][i] !== letter) return res;
         }
-        result += letter;
+        res += letter
     }
-    return result;
+    return res;
 }
+console.log(longestCommonPrefix(["flower", "flow", "flight"]))

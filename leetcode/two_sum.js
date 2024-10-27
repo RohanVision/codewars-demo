@@ -1,4 +1,4 @@
-/* 
+/*
 1. Two Sum
 
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
@@ -33,6 +33,17 @@ Only one valid answer exists.
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 
 */
+function twoSums(num, target) {
+    let obj = {};
+    for (let i = 0; i < num.length; i++) {
+        diff = target - num[i];
+        if (obj.hasOwnProperty(diff)) {
+            return [obj[diff], i]
+        }
+        obj[diff] = i
+    }
+    return null;
+}
 
 
 // practice 1
@@ -48,7 +59,6 @@ function twoSums(num, target) {
     }
     return null;
 }
-
 
 // Optimal Solutions
 

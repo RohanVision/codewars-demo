@@ -24,6 +24,22 @@
 
 // 1 <= n <= 104
 
+// Practice Weekend
+function fizzBuzz(n) {
+    let res = [];
+    for (let i = 1; i <= n; i++) {
+        if (i % 5 === 0 && i % 3 === 0) {
+            res.push("FizzBuzz");
+        } else if (i % 3 === 0) {
+            res.push("Fizz")
+        } else if (i % 5 === 0) {
+            res.push("Buzz")
+        } else {
+            res.push(i.toString());
+        }
+    }
+    return res;
+}
 
 
 
@@ -43,22 +59,3 @@ const fizzBuzz = function (n) {
     }
     return result;
 };
-
-
-// Practice time 1
-
-// function fizzBuzz(n) {
-//     let output = [];
-//     for (let i = 1; i <= n; i++) {
-//         if (i % 3 === 0 && i % 5 === 0) {
-//             output.push("FizzBuzz")
-//         } else if (i % 3 === 0) {
-//             output.push("Fizz");
-//         } else if (i % 5 === 0) {
-//             output.push("Buzz");
-//         } else {
-//             output.push(i.toString())
-//         }
-//     }
-//     return output
-// }

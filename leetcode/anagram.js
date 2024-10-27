@@ -44,21 +44,22 @@
 
 
 // Practice  weekend
-function anagram(s, t) {
-    if (s.length !== t.length) return false;
-    let obj = {}
 
+function validAnagram(s, t) {
+    if (s.length !== t.length) return false;
+    let resObj = {};
     for (let letter of s) {
-        obj[letter] = (obj[letter] || 0) + 1;
+        resObj[letter] === (resObj[letter] || 0) + 1;
     }
 
     for (let letter of t) {
-        if (obj[letter] === undefined || obj[letter] === 0) {
+        if (resObj[letter] === undefined || resObj[letter] === 0) {
             return false;
         }
-        obj[letter]--;
+        resObj[letter]--
     }
     return true;
+
 }
 
 console.log(anagram("anagram", "nagaram"));

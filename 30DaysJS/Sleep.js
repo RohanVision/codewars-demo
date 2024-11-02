@@ -48,7 +48,7 @@ async function sleep(millis) {
 
 
 async function sleep(millis) {
-    await new Promise(resolve, reject) {
+    await new Promise((resolve, reject) => {
         setTimeout(resolve, millis)
-    }
+    })
 }

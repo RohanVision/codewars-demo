@@ -25,11 +25,6 @@
 // 1 <= millis <= 1000
 
 
-/**
- * @param {number} millis
- * @return {Promise}
- */
-
 // First Approach without await
 async function sleep(millis) {
 

@@ -84,21 +84,17 @@
  */
 var timeLimit = function (fn, t) {
     return async function (...args) {
-        return new Promise((delayresolve, reject) => {
-            const timeoutId = setTimeout(() => {
-                clearTimeout(timeoutId);
-                reject("Time Limit Exceeded");
-            }, t);
+        return new Promise(async (resolve, reject) => {
+            const timeOutRef = setTimeout(() => reject("Time Limit Exceeded"), t);
 
-            fn(...args)
-                .then((result) => {
-                    clearTimeout(timeoutId);
-                    delayresolve(result);
-                })
-                .catch((error) => {
-                    clearTimeout(timeoutId);
-                    reject(error);
-                });
+            try {
+                const resp = await fn(...args);
+                clearInterval(timeOutRef);
+                resolve(resp)
+            } catch (error) {
+                clearInterval(timeOutRef);
+                reject(error);
+            }
         });
     };
 };

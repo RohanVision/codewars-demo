@@ -89,10 +89,10 @@ var timeLimit = function (fn, t) {
 
             try {
                 const resp = await fn(...args);
-                clearInterval(timeOutRef);
+                clearTimeout(timeOutRef);
                 resolve(resp)
             } catch (error) {
-                clearInterval(timeOutRef);
+                clearTimeout(timeOutRef);
                 reject(error);
             }
         });

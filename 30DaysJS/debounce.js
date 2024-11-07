@@ -76,13 +76,14 @@
 // 0 <= calls[i].inputs.length <= 10
 
 
-// Solution
+// Solution and explanation
 
 /**
  * @param {Function} fn
  * @param {number} t milliseconds
  * @return {Function}
  */
+
 var debounce = function (fn, t) {
     let timeOutRef
     return function (...args) {

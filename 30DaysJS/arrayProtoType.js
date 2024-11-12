@@ -6,7 +6,7 @@
 
 // You may assume the array is the output of JSON.parse.
 
- 
+
 
 // Example 1:
 
@@ -18,9 +18,28 @@
 // Input: nums = []
 // Output: -1
 // Explanation: Because there are no elements, return -1.
- 
+
 
 // Constraints:
 
 // arr is a valid JSON array
 // 0 <= arr.length <= 1000
+
+console.log(Object.getOwnPropertyNames(Array.prototype));
+
+// Solution
+/**
+ * @return {null|boolean|number|string|Array|Object}
+ */
+Array.prototype.last = function () {
+    // this keyword refer to any individual array
+    if (this.length) {
+        return this[this.length - 1];
+    }
+    return -1;
+};
+
+/**
+ * const arr = [1, 2, 3];
+ * arr.last(); // 3
+ */

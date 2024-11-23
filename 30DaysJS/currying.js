@@ -27,3 +27,6 @@ function curry(fn) {
         return (...args2) => innerCurry.apply(this, [...args, ...args2])
     }
 }
+
+
+// https://www.linkedin.com/pulse/what-currying-javascript-arjunan-k/ - Important link to undestand Currying

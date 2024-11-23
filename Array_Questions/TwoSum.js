@@ -45,7 +45,7 @@ function twoSum(numbers, target) {
         let diff = target - numbers[i]
 
         if (hashMap.hasOwnProperty(diff)) {
-            return [i, hashMap[diff]]
+            return [hashMap[diff], i]
         }
         hashMap[numbers[i]] = i;
     }
@@ -53,3 +53,11 @@ function twoSum(numbers, target) {
 }
 
 console.log(twoSum([2, 7, 11, 15], 9))
+
+// 1. Create empty hasObj
+// 2. loop over the Array;
+// 3. check the diff = target - numbers[i]
+// 4. if diff is present in the hasObj then
+//         return [hasObj[diff], i] which is => [0, 1]
+// 5. else store value into hasobj in key value pair => 2:0
+// 6. if empty array return null

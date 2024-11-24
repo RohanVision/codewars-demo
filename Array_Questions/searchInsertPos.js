@@ -52,3 +52,25 @@ var searchInsert = function (nums, target) {
     }
     return left;
 };
+
+/*
+Intuition
+To solve this in O log n time, use the binary search method, which works with divide and conquer.
+With this we can eliminate half of the array per iteration
+Given a sorted array, we search through the array to see if a target is present, while each search divides the array length into two
+
+Approach
+Create two variable left and right position starting at 0 and array length -1 respectively
+
+compute the mid point of the array, which is gotten by add (left + right) / 2
+
+Create another variable insertPosition for where target posiiton in the situation where the target value is not part of the array
+
+Using a while loop, loop through the array as long as left is smaller or equal to right
+1. check if the array in midpoint is lesser then target, update the right value to midpoint -1 and the insertPosition to midPoint
+2. if the array in midpoint is greater than target, update the left value to midpoint + 1 and the insertPosition to midPoint + 1
+3. if array in midPoint equals the target return the midPoint
+
+if array in midpoint equals the target, return the midPoint value else return insertedPosition
+
+*/

@@ -52,6 +52,11 @@ var plusOne = function (digits) {
 };
 
 
+// BIGInt solution
+var plusOne = function (digits) {
+    return (BigInt(digits.join('')) + BigInt(1)).toString().split('')
+};
+
 
 // Visual Representation
 // Input: [9, 9]
@@ -77,3 +82,15 @@ var plusOne = function (digits) {
 // digits = [1, 0, 0]
 // Return the Result
 // [1, 0, 0]
+
+
+// Initial Input
+// digits = [1, 2, 3]
+// Loop Execution
+// Iteration 1 (i = 2 — last digit):
+// digits[2] = 3
+// Check: digits[2] < 9 → true (3 < 9)
+// Increment: digits[2] = digits[2] + 1 = 4
+// Return: [1, 2, 4] (no carry, so the loop ends here).
+// Final Output
+// The function returns [1, 2, 4].

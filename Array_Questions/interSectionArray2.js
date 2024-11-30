@@ -32,6 +32,7 @@
 
 // HasMap Solution
 
+
 var intersect = function (nums1, nums2) {
     let map = {};
     let result = [];
@@ -45,11 +46,25 @@ var intersect = function (nums1, nums2) {
             result.push(n);
             map[n]--;
         }
-
     }
     return result;
-
 }
+// Approach
+// We can use a hash map to store the frequency of each number in nums1, then iterate over nums2 and check which numbers are also in the map. If a number appears in both arrays, we reduce the count in the map and add that number to the result.
+
+// Steps:
+
+// Create a hash map (object) to store the count of elements in nums1.
+// Iterate over nums2 and check if the current number exists in the map
+// If it does, add the number to the result.
+// Decrement the count of that number in the map.
+// Return the result array.
+// Complexity
+// Time complexity:O(m+n) length of num1 & num2
+// Space complexity:O(m)
+
+
+
 
 // Sorting Two-Pointers Solution
 

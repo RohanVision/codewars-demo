@@ -38,8 +38,27 @@ var maxProfit = function (prices) {
             // then set profit = 5 - 1 = 4
             profit = prices[i] - buy_price
         }
-        // profit = Math.max(profit, prices[i] - buy_price)
     }
-
     return profit;
 };
+console.log(maxProfit([7, 1, 5, 3, 6, 4]))
+// Input: prices = [7, 1, 5, 3, 6, 4]
+
+
+// var maxProfit = function (prices) {
+//     let buy_price = prices[0];
+//     let profit = 0;
+
+//     for (let i = 1; i < prices.length; i++) {
+//         if (buy_price > prices[i]) {
+//             buy_price = prices[i]
+//         } else if (prices[i] - buy_price > profit) {
+//             // day i = 2 itaration if (5 - 1 = 4 > 0)
+//             // then set profit = 5 - 1 = 4
+//             profit = prices[i] - buy_price
+//         }
+//         // profit = Math.max(profit, prices[i] - buy_price)
+//     }
+
+//     return profit;
+// };

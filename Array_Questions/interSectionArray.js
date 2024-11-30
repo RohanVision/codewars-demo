@@ -25,16 +25,14 @@
 // 1 <= nums1.length, nums2.length <= 1000
 // 0 <= nums1[i], nums2[i] <= 1000
 
-
 var intersection = function (nums1, nums2) {
-    let s1 = new Set(nums1)
-    let s2 = new Set(nums2)
+    let s1 = new Set(nums1);
+    let s2 = new Set(nums2);
     let res = [];
     for (let n of s1) {
         if (s2.has(n)) {
-            res.push(n)
+            res.push(n);
         }
     }
     return res;
-
 };

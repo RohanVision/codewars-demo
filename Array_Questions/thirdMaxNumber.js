@@ -40,33 +40,26 @@
 
 
 
-/**
- * @param {number[]} nums
- * @return {number}
- */
 var thirdMax = function (nums) {
     nums.sort((a, b) => b - a);
 
-    let elementCount = 1;
-    let preElement = nums[0];
+    let elemCounted = 1;
+    let prevElement = nums[0];
 
-    for (let i = 1; i < nums.length; ++i) {
-        // current ele diff than pre
-        if (nums[i] != preElement) {
-            elementCount += 1;
-            preElement = nums[i];
+    for (let i = 1; i < nums.length; i++) {
+        //check current ele diff with prev ele if yes increase the number elemecount and set prevElemet to curr
+        if (nums[i] != prevElement) {
+            elemCounted += 1;
+            prevElement = nums[i];
         }
-
         // if we counted 3 numbers then return current number
-        if (elementCount == 3) {
+        if (elemCounted === 3) {
             return nums[i];
         }
     }
-
     // we never count 3 distict number then return largest number
-    return nums[0];
+    return nums[0]
 };
-
 
 
 // Approach 1: Sorting

@@ -30,12 +30,10 @@
 // -3 * 104 <= nums[i] <= 3 * 104
 // Each element in the array appears twice except for one element which appears only once.
 
-
-var singleNumber = function (nums) {
+const singleNumber = function (nums) {
     let uniqueNum = 0;
-
     for (let i = 0; i < nums.length; i++) {
-        uniqueNum = uniqueNum ^ nums[i]
+        uniqueNum = uniqueNum ^ nums[i];
     }
     return uniqueNum;
 };

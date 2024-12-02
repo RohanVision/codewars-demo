@@ -42,9 +42,10 @@ var maxProfit = function (prices) {
     return profit;
 };
 console.log(maxProfit([7, 1, 5, 3, 6, 4]))
+
 // Input: prices = [7, 1, 5, 3, 6, 4]
 
-
+// console.log(maxProfit([7, 1, 5, 3, 6, 4]))
 // var maxProfit = function (prices) {
 //     let buy_price = prices[0];
 //     let profit = 0;

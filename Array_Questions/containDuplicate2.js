@@ -35,7 +35,7 @@ var containsNearbyDuplicate = function(nums, k) {
 
     for(let i = 0; i < nums.length; i++){
         let val = nums[i];
-        if(res.hasOwnProperty(val) && i - nums[i] >= k){
+        if(res.hasOwnProperty(val) && i - nums[i] <= k){
             return true;
         } else {
             res[val] = i;
@@ -43,6 +43,7 @@ var containsNearbyDuplicate = function(nums, k) {
     }
     return false;
 }
+console.log(containsNearbyDuplicate([1,2,3,1], 3));
 
 // with map 
 // var containsNearbyDuplicate = function(nums, k) {

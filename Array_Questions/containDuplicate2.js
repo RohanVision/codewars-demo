@@ -28,19 +28,21 @@
  * @param {number} k
  * @return {boolean}
  */
+
+
 var containsNearbyDuplicate = function(nums, k) {
-    const seen = {};
+    let res = {};
 
     for(let i = 0; i < nums.length; i++){
-        const val = nums[i];
-        if(seen.hasOwnProperty(val) && i - seen[val] <= k){
+        let val = nums[i];
+        if(res.hasOwnProperty(val) && i - nums[i] >= k){
             return true;
+        } else {
+            res[val] = i;
         }
-        seen[val] = i;
     }
     return false;
-};
-
+}
 
 // with map 
 // var containsNearbyDuplicate = function(nums, k) {

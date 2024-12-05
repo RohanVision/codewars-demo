@@ -38,21 +38,23 @@
 // Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 
 
+
 function twoSum(numbers, target) {
-    let hashMap = {};
+    const obj = {};
 
     for (let i = 0; i < numbers.length; i++) {
-        let diff = target - numbers[i]
-
-        if (hashMap.hasOwnProperty(diff)) {
-            return [hashMap[diff], i]
+        let diff = target - numbers[i];
+        if (obj.hasOwnProperty(diff)) {
+            return [obj[diff], i];
+        } else {
+            obj[numbers[i]] = i;
         }
-        hashMap[numbers[i]] = i;
     }
     return null;
 }
 
 console.log(twoSum([2, 7, 11, 15], 9))
+console.log(twoSum([3, 2, 4], 6));
 
 // 1. Create empty hasObj
 // 2. loop over the Array;

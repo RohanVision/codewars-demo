@@ -45,36 +45,17 @@ function twoSums(num, target) {
     return null;
 }
 
-
-// practice 1
 function twoSums(num, target) {
-    let hashObj = {};
-
+    const obj = {};
     for (let i = 0; i < num.length; i++) {
         diff = target - num[i];
-        if (hashObj.hasOwnProperty(diff)) {
-            return [hashObj[diff], i];
+        if (obj.hasOwnProperty(diff)) {
+            return [obj[diff], i];
         }
-        hashObj[diff] = i;
+        obj[diff] = i;
     }
     return null;
 }
-
-// Optimal Solutions
-
-// function twoSum(numbers, target) {
-//     let result = {}
-
-//     for (let i = 0; i < numbers.length; i++) {
-//         let diff = target - numbers[i];
-
-//         if (result.hasOwnProperty(diff)) {
-//             return [i, result[diff]];
-//         }
-//         result[numbers[i]] = i
-//     }
-//     return null;
-// }
 
 /*
 Intuition

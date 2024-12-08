@@ -1,22 +1,14 @@
-// Given two strings s and t, return true if t is an 
-// anagram of s, and false otherwise.
+// Given two strings s and t, return true if t is an anagram of s, and false otherwise.
 
 // Example 1:
-
 // Input: s = "anagram", t = "nagaram"
-
 // Output: true
 
 // Example 2:
-
 // Input: s = "rat", t = "car"
-
 // Output: false
 
-
-
 // Constraints:
-
 // 1 <= s.length, t.length <= 5 * 104
 // s and t consist of lowercase English letters.
 
@@ -32,7 +24,6 @@
 //         countObj[letter] = (countObj[letter] || 0) + 1;
 //     }
 
-
 //     for (let letter of t) {
 //         if (countObj[letter] === undefined || countObj[letter] === 0) {
 //             return false
@@ -46,21 +37,22 @@
 // Practice  weekend
 
 function validAnagram(s, t) {
-    if (s.length !== t.length) return false;
+    if (s.length !== t.length) {
+        return false;
+    }
     let resObj = {};
     for (let letter of s) {
-        resObj[letter] === (resObj[letter] || 0) + 1;
+        resObj[letter] = (resObj[letter] || 0) + 1;
     }
 
     for (let letter of t) {
         if (resObj[letter] === undefined || resObj[letter] === 0) {
             return false;
         }
-        resObj[letter]--
+        resObj[letter]--;
     }
     return true;
-
 }
 
-console.log(anagram("anagram", "nagaram"));
-console.log(anagram("rat", "car"))
+console.log(validAnagram("anagram", "nagaram"));
+console.log(validAnagram("rat", "car"))

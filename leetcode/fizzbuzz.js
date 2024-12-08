@@ -41,21 +41,19 @@ function fizzBuzz(n) {
     return res;
 }
 
-
-
-const fizzBuzz = function (n) {
+function fizzBuzz(n) {
     let result = [];
-
-    for (let i = 1; i <= n; i++) {
-        if (i % 3 === 0 && i % 5 === 0) {
-            result.push("FizzBuzz");
+    for (let i = 0; i <= n; i++) {
+        if (i % 5 === 0 && i % 3 === 0) {
+            result.push("Fizzbuzz");
         } else if (i % 3 === 0) {
-            result.push("Fizz");
+            result.push("fizz");
         } else if (i % 5 === 0) {
-            result.push("Buzz");
+            result.push("buzz");
         } else {
             result.push(i.toString());
         }
     }
     return result;
-};
+}
+console.log(fizzBuzz(15));

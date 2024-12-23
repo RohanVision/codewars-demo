@@ -65,11 +65,11 @@ The problem requires finding two numbers in an array that sum up to a given targ
 
 To optimize this, I realized that we can use a hash map to store numbers and their indices as we iterate through the array.By checking if the difference between the target and the current number exists in the map, we can find the solution in a single pass.
 
-1. Initialize an empty hash map (numToIndexMap) to store the numbers we've seen so far and their corresponding indices.
+1. Initialize an empty hash map (hasObj) to store the numbers we've seen so far and their corresponding indices.
 2. Iterate over the array using a for loop.
 3. For each number nums[i], calculate the difference diff between the target and the current number (diff = target - nums[i]).
-4. Check if diff exists in numToIndexMap. If it does, it means we've found the two numbers that add up to the target. Return their indices [i, numToIndexMap.get(diff)].
-5. If diff does not exist in the map, store the current number and its index in numToIndexMap.
+4. Check if diff exists in hasObj. If it does, it means we've found the two numbers that add up to the target. Return their indices [i, hasObj.get(diff)].
+5. If diff does not exist in the map, store the current number and its index in hasObj.
 6. If no such pair is found by the end of the loop, return null. (Though according to the problem constraints, a solution is guaranteed, so this case won't occur.)
 
 Complexity

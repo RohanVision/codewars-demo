@@ -33,30 +33,32 @@ Only one valid answer exists.
 Follow-up: Can you come up with an algorithm that is less than O(n2) time complexity?
 
 */
+// function twoSums(num, target) {
+//     let obj = {};
+//     for (let i = 0; i < num.length; i++) {
+//         diff = target - num[i];
+//         if (obj.hasOwnProperty(diff)) {
+//             return [obj[diff], i]
+//         }
+//         obj[diff] = i
+//     }
+//     return null;
+// }
+
 function twoSums(num, target) {
     let obj = {};
+
     for (let i = 0; i < num.length; i++) {
         diff = target - num[i];
         if (obj.hasOwnProperty(diff)) {
             return [obj[diff], i]
         }
-        obj[diff] = i
+        obj[num[i]] = i;
     }
     return null;
 }
 
-function twoSums(num, target) {
-    const obj = {};
-    for (let i = 0; i < num.length; i++) {
-        diff = target - num[i];
-        if (obj.hasOwnProperty(diff)) {
-            return [obj[diff], i];
-        }
-        obj[diff] = i;
-    }
-    return null;
-}
-
+console.log(twoSums([2, 7, 11, 15], 9))
 /*
 Intuition
 The problem requires finding two numbers in an array that sum up to a given target.My first thought was to use a brute force approach, where I would check each pair of numbers to see if they add up to the target.However, this would have a time complexity of O(n ^ 2), which is inefficient for large arrays.

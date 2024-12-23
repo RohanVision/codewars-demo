@@ -34,25 +34,25 @@
 // };
 
 
-// Practice  weekend
 
-function validAnagram(s, t) {
-    if (s.length !== t.length) {
-        return false;
-    }
-    let resObj = {};
+var isAnagram = function (s, t) {
+    if (s.length !== t.length) return false; // base case - if length is not match return false;
+    let obj = {}; // create empty hashObj
+
     for (let letter of s) {
-        resObj[letter] = (resObj[letter] || 0) + 1;
+        obj[letter] = (obj[letter] || 0) + 1;
+        // loop over the string (s) and check if letter present in the obj if yes increase the count if not added
     }
 
     for (let letter of t) {
-        if (resObj[letter] === undefined || resObj[letter] === 0) {
+        if (obj[letter] === undefined || obj[letter] === 0) {
+            // loop over string(t) and check if letter is undefine or 0 and return false
             return false;
         }
-        resObj[letter]--;
+        obj[letter]--; // reduce the letter
     }
-    return true;
+    return true; // if all letter match return true
 }
 
-console.log(validAnagram("anagram", "nagaram"));
-console.log(validAnagram("rat", "car"))
+console.log(isAnagram("anagram", "nagaram"));
+console.log(isAnagram("rat", "car"))

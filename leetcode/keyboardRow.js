@@ -26,16 +26,18 @@
 // Constraints:
 // 1 <= words.length <= 20
 // 1 <= words[i].length <= 100
-// words[i] consists of English letters(both lowercase and uppercase). 
+// words[i] consists of English letters(both lowercase and uppercase).
 
 
 /**
  * @param {string[]} words
  * @return {string[]}
  */
+
+
 var findWords = function (words) {
-    return words.filter(word => wordCheck(word));
-};
+    return words.filter((word) => wordCheck(word))
+}
 
 let wordCheck = function (word) {
     const row1 = "qwertyuiop";
@@ -47,21 +49,17 @@ let wordCheck = function (word) {
     let count3 = 0;
 
     word = word.toLowerCase();
-    let N = word.length;
+    N = word.length;
 
     for (let i = 0; i < word.length; i++) {
-        if (row1.includes(word[i])) {
-            count1++;
-        }
-        if (row2.includes(word[i])) {
-            count2++;
-        }
-        if (row3.includes(word[i])) {
-            count3++;
-        }
+        if (row1.includes(word[i])) count1++;
+        if (row2.includes(word[i])) count2++;
+        if (row3.includes(word[i])) count3++;
     }
     return count1 === N || count2 === N || count3 === N;
 }
+
+console.log(findWords(["Hello", "Alaska", "Dad", "Peace"]));
 
 // time complexity = o(n*m) - we loop through words which how many words n and later how long that word which is m
 // space complexity = o(m)

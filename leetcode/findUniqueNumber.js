@@ -1,12 +1,12 @@
 
 function countUniqueValues(arr) {
-    let hashObj = {};
-
+    let obj = {};
     for (let key of arr) {
-        hashObj[key] = (hashObj[key] || 0) + 1;
+        obj[key] = (obj[key] || 0) + 1
     }
-    return Object.keys[hashObj].length;
+    return Object.keys(obj).length;
 }
+
 
 // second approach
 function countUniqueValues(arr) {

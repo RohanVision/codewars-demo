@@ -24,36 +24,22 @@
 
 // 1 <= n <= 104
 
-// Practice Weekend
+
 function fizzBuzz(n) {
     let res = [];
     for (let i = 1; i <= n; i++) {
         if (i % 5 === 0 && i % 3 === 0) {
             res.push("FizzBuzz");
         } else if (i % 3 === 0) {
-            res.push("Fizz")
+            res.push("Fizz");
         } else if (i % 5 === 0) {
             res.push("Buzz")
         } else {
-            res.push(i.toString());
+            res.push(i.toString())
         }
     }
     return res;
 }
 
-function fizzBuzz(n) {
-    let result = [];
-    for (let i = 0; i <= n; i++) {
-        if (i % 5 === 0 && i % 3 === 0) {
-            result.push("Fizzbuzz");
-        } else if (i % 3 === 0) {
-            result.push("fizz");
-        } else if (i % 5 === 0) {
-            result.push("buzz");
-        } else {
-            result.push(i.toString());
-        }
-    }
-    return result;
-}
+
 console.log(fizzBuzz(15));

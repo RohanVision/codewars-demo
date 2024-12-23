@@ -29,13 +29,26 @@
 // By Recurrsion
 
 
-function fib(n) {
-    if (n === 1) return 1;
-    if (n === 0) return 0;
-    return fib(n - 1) + fib(n - 2)
+// function fib(n) {
+//     if (n === 1) return 1;
+//     if (n === 0) return 0;
+//     return fib(n - 1) + fib(n - 2)
+// }
+
+// const fib = function (num) {
+//     if (num <= 2) return 1;
+//     return fib(num - 1) + fib(num - 2)
+// }
+
+
+// Full Optimize with memo
+function fib(n, memo = {}) {
+    if (n <= 2) return 1; // base case
+    if (n in memo) {
+        return memo[n]; // if number present in memo object return the number
+    }
+    memo[n] = fib(n - 1, memo) + fib(n - 2, memo); // here the memo object is passed by reference (not by value). // ensures that the same memo object is shared across all recursive calls, allowing all calls to access and update the cache.
+    return memo[n];
 }
 
-const fib = function (num) {
-    if (num <= 2) return 1;
-    return fib(num - 1) + fib(num - 2)
-}
+console.log(fib(6))

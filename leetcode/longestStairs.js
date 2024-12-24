@@ -32,17 +32,15 @@
  */
 
 // Dynamic Programming
-// var climbStairs = function(n) {
-//     if (n === 1) return 1;
-//     if (n === 2) return 2;
-
-//     let dp = [0, 1, 2];
-//     for(let i = 3; i <= n; i++){
-//         console.log(dp[i])
-//         dp[i] = dp[i - 1] + dp[i - 2];
-//     }
-//     return dp[n]
-// };
+var climbStairs = function (n) {
+    let dp = []
+    dp[1] = 1;
+    dp[2] = 2;
+    for (let i = 3; i <= n; i++) {
+        dp[i] = dp[i - 1] + dp[i - 2];
+    }
+    return dp[n];
+}
 
 // Optimize Approach with constant space O(1) using two variables
 

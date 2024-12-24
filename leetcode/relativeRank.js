@@ -53,17 +53,22 @@
 // };
 
 var findRelativeRanks = function (score) {
+    // Creates a mapping between each score and its original index.
     const scoreToIndex = new Map();
     for (let i = 0; i < score.length; i++) {
+        // setting the index to the score
+        // scoreToIndex.set(10, 0); // Add key-value pair: 10 → 0
+        // scoreToIndex.set(3, 1);  // Add key-value pair: 3 → 1
         scoreToIndex.set(score[i], i);
     }
-
+    // sorted in descending order by sprading score
     const sortedScore = [...score].sort((a, b) => b - a);
-
+    // empty array rank of the same length as score to store the ranks for each score.
     const rank = new Array(score.length);
-
+    // Loop over sortedArray
     for (let i = 0; i < sortedScore.length; i++) {
-        const originalIndex = scoreToIndex.get(sortedScore[i])
+        // Use the scoreToIndex map to get the original index of the current score in sortedScore.
+        const originalIndex = scoreToIndex.get(sortedScore[i]);
         if (i === 0) {
             rank[originalIndex] = "Gold Medal";
         } else if (i === 1) {
@@ -74,5 +79,6 @@ var findRelativeRanks = function (score) {
             rank[originalIndex] = (i + 1).toString();
         }
     }
-    return rank
+    return rank;
 }
+console.log(findRelativeRanks([10, 3, 8, 9, 4]))

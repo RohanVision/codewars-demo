@@ -24,60 +24,43 @@
 // s consists only of printable ASCII characters.
 
 // Practice weekend
-function checkPal(s) {
-    i = 0;
-    j = s.length - 1;
-    while (i <= j) {
-        if (s[i] === s[j]) {
-            i++;
-            j--
-        } else {
-            return false;
-        }
-    }
-    return true;
-}
-
-var isPalindrome = function (s) {
-    const regx = /[^a-zA-Z]/g;
-    const clean = s.replace(regx, "").toLowerCase();
-    return checkPal(clean)
-};
-
-
-function checkPal(s) {
+const checkPal = function (s) {
+    // Start with i = 0, j = 20 (length - 1).
     let i = 0;
     let j = s.length - 1;
+    // loop will run until the i and j meet or cross each other
     while (i <= j) {
-        if (s[i] === s[j]) {
-            i++;
-            j--;
+        if (s[i] === s[j]) { // Compare characters at both ends
+            i++; // Move the start pointer forward
+            j--; // Move the end pointer backward
+        } else {
+            return false; // If characters don't match, it's not a palindrome
         }
-        return false;
     }
-    return true;
+    return true; // If all characters match, it's a palindrome
 }
-
-const isPalindrome = function (s) {
-    const regx = /[^A-Za-z]/g;
-    const clean = s.replace(regx, "").toLowerCase();
-    return checkPal(clean)
+// preposses function
+const isPalindromes = function (s) {
+    const regx = /[^a-zA-Z/]/g; // ^ Negates the set, meaning "not in this set. means match all non-alphabetic"
+    const clean = s.replace(regx, "").toLowerCase(); // convert the string "amanaplanacanalpanama"
+    return checkPal(clean) // return the function checkpal
 }
 
 // second Approach
 
-var isPalindrome = function (s) {
-    const result = s.replace(/[\W_]/g, "").toLowerCase();
-    let l = 0;
-    let r = result.length - 1;
-    while (l < r) {
-        if (result[l] !== result[r]) {
-            return false;
-        }
-        l++;
-        r--
-    }
-    return true;
-};
+// var isPalindrome = function (s) {
+//     const result = s.replace(/[\W_]/g, "").toLowerCase();
+//     let l = 0;
+//     let r = result.length - 1;
+//     while (l < r) {
+//         if (result[l] !== result[r]) {
+//             return false;
+//         }
+//         l++;
+//         r--
+//     }
+//     return true;
+// };
 
-console.log(isPalindrome("A man, a plan, a canal: Panama"))
+// console.log(isPalindrome("A man, a plan, a canal: Panama"))
+console.log(isPalindromes("A man, a plan, a canal: Panama"))

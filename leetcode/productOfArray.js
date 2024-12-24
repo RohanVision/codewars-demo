@@ -1,15 +1,16 @@
 // productOfArray([1,2,3]) // 6
 // productOfArray([1,2,3,10]) // 60
 
-function productOfArray(arr) {
+
+const productOfArray = function (arr) {
     if (arr.length === 0) return 1;
     return arr.pop() * productOfArray(arr);
 }
-
+console.log(productOfArray([1, 2, 3]));
+console.log(productOfArray([1, 2, 3, 10]));
 
 /*
-
-The function first checks base case if arr it if empty or not if it is return 1.
+The function first checks base case if arr is empty or not if it is return 1.
 if not then it recursivly call itself. 
 first it pop the last number from the array using pop() method and then it multiply with arr.
 
